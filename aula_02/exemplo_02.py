@@ -12,7 +12,7 @@ match mes:
     case 8: mes = 'Fevereiro'
     case 9: mes = 'Fevereiro'
     case 10: mes = 'Fevereiro'
-    case 11 mes = 'Fevereiro'
+    case 11: mes = 'Fevereiro'
 
 
 print(mes)
