@@ -1,0 +1,1 @@
+#Remover espaços desnecessários entre palavras de um texto. def RemoverEspacos(texto)

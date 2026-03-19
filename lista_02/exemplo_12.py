@@ -1,0 +1,1 @@
+#12. Obter o menor inteiro que seja maior ou igual ao número real x, utilizando a função MenorInteiro abaixo: def MenorInteiro(x)

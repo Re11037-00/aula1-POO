@@ -1,3 +1,4 @@
+#Ler o número do mês (1 – janeiro; 2 – fevereiro; ...; 12 – dezembro) e identificar o nome do mês e em que trimestre o mês está incluído.
 print('Informe o número do mês')
 mes = int(input())
 trimestre = 0

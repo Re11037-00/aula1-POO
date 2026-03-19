@@ -1,3 +1,6 @@
 print("Digite uma frase: ")
 s = input()
-s.split()
+lista = s.split()
+for palavra in lista:
+    print(lista)
+    lista = lista

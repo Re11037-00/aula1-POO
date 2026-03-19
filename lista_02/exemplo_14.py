@@ -1,0 +1,1 @@
+#Obter o menor múltiplo comum (MMC) entre dois inteiros positivos x e y, utilizando a função MMC abaixo: def MMC(x, y)
