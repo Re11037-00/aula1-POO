@@ -11,11 +11,9 @@ Resultado:
 
 Obs: Primeira coluna: números de 1 a 10, demais colunas: números pares menores/iguais ao valor da 1a coluna.'''
 
-n = 1
-
 for n in range (1, 11):
-    if n % 2 == 0: 
-        print(n)
-    else: 
-        print(n)
-    n += 1
+ print(n, end= "")
+ for i in range(2, n + 1, 2):
+  print(" ", i, sep="", end="")
+
+ print()
