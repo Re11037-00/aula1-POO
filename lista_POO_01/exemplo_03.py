@@ -11,7 +11,7 @@ class Conta_Bancaria:
         self.saldo = 0
     #método -cálculos que vão ser feitos
     def calc_area(self):
-        return self.b * self.h / 2
+        return 
     
 
 # x é a referência do objeto criado pela instrução Triangulo()
