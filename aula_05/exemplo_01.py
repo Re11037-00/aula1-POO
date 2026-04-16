@@ -45,6 +45,61 @@ class Viagem():
         return self.__tempo
     def velocidade_media(self):
         return self.__distancia / self.__tempo
+    
+class Conta():
+    def __init__(self):
+        self.__nome = ""
+        self.__numero = ""
+        self.__saldo = ""
+        # self.__depositado = ""
+        # self.__sacado = ""
+    def set_nome(self, n):
+        self.__nome = n
+        #else: raise ValueError()
+    def set_numero(self, v):
+        if v >= 0: self.__numero = v
+        else: raise ValueError()
+    def set_saldo(self, s):
+        self.__saldo = s
+    
+    def get_nome(self):
+        return self.__nome
+    def get_numero(self):
+        return self.__numero
+    def get_saldo(self):
+        return self.__saldo
+    def deposito(self):
+        return self.__saldo  #self.__depositado
+    def saque(self):
+        return self.__saldo  #self.__sacado
+
+
+class Ingresso():
+    def __init__(self):
+        self.__dia = ""
+        self.__hora = ""
+    def set_dia(self, d):
+        if d >= 1 and d <= 7: self.__b = d
+        else: raise ValueError()
+    def set_hora(self, h):
+        if h >= 0 and h <= 24: self.__hora = h
+        else: raise ValueError()
+    def get_dia(self):
+        return self.__dia
+    def get_hora(self):
+        return self.__hora
+    def valor(self): 
+        valor_base == 0
+        if self.__dia == 2 or self.__dia == 3 or self.__dia == 5:
+            valor_base = 16
+        if self.__dia == 6 or self.__dia == 7 or self.__dia == 1:
+            valor_base = 20
+        if self.__dia == 4:
+            valor_base = 8
+        if self.__hora >= 17 or self.__hora <= 24:
+            valor_base = valor_base / 2
+
+    
 # Interface com o usuário
 class UI:
     @staticmethod
@@ -55,6 +110,8 @@ class UI:
             if op == 1: UI.triangulo()
             if op == 2: UI.circulo()
             if op == 3: UI.viagem()
+            if op == 4: UI.conta()
+            if op == 5: UI.ingresso()
     @staticmethod
     def menu():
         print("1-Triângulo 2-Círculo 3-Viagem, 4-Conta Bancária, 5-Ingresso, 9-Fim")
@@ -70,6 +127,7 @@ class UI:
         print(f"Um triângulo com base {x.get_base()} e altura {x.get_altura()} tem área = {area}")
     @staticmethod
     def circulo():
+        print("Cálculo da área e circumferência de um círculo")
         x = Circulo()
         x.set_raio(float(input("Informe o raio do círculo: ")))
         area = x.calc_area()
@@ -78,9 +136,36 @@ class UI:
         print(f"A circumferência de um círculo com raio {x.get_raio()} é = {circumferencia}")
     @staticmethod
     def viagem():
+        print("Cálculo da velocidade média atingida numa viagem")
         x = Viagem()
         x.set_distancia(float(input("Informe a distância percorrida (em KM): ")))
-        x.set_tempo(float(input("Informe o tempo gasto (em horas e minutos): ")))
+        x.set_tempo(int(input("Informe o tempo gasto (em horas e minutos): ")))
         kmh = x.velocidade_media()
         print(f"A velocidade média atingida é de {kmh} Km/h")
+    @staticmethod
+    def conta():
+        x = Conta()
+        x.set_nome(input("Informe seu nome: "))
+        x.set_numero(int(input("Informe o número da conta: ")))
+        x.set_saldo(float(input("Informe seu saldo:")))
+        selecao = 0
+        print("1-depósito 2-saque")
+        selecao = int(input("Escolha uma opção: "))
+        if selecao == 1: a = x.deposito()
+            #     set_depositadp = int(input("Digite o quanto irá depositar: "))
+            #     print(x.set_saldo)
+            # if selecao == 2: a = x.saque()
+            #     set_sacado = int(input("Digite o quanto irá sacar: "))
+            #     print(x.set_saldo)
+
+        
+    @staticmethod
+    def ingresso():
+        print("Cálculo do ingresso para entrada de cinema")
+        x = Ingresso()
+        print("1-Domingo 2-Segunda 3-Terça 4-Quarta 5-Quinta 6-Sexta 7-Sábado")
+        x.set_dia(int(input("Informe o dia da semana: ")))
+        x.set_hora(float(input("Informe o horário (0-24): ")))
+        custo = x.valor()
+        print(f"Os ingressos custam R$ {custo}")
 UI.main()
