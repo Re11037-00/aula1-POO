@@ -75,7 +75,7 @@ class Ingresso():
         self.__dia = ""
         self.__hora = ""
     def set_dia(self, d):
-        if d >= 1 and d <= 7: self.__b = d
+        if d >= 1 and d <= 7: self.__dia = d
         else: raise ValueError()
     def set_hora(self, h):
         if h >= 0 and h <= 24: self.__hora = h
