@@ -1,4 +1,4 @@
-import math
+import math 
 
 class Triangulo:
  def __init__(self):
