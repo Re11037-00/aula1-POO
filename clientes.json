@@ -1,14 +1,20 @@
 [
-    {
-        "id": 1,
-        "nome": "Douglas Crockford"
-    }, 
-    {
-        "id": 2,
-        "nome": "Jon Bosak"
-    }, 
-    {
-        "id": 3,
-        "nome": "Alan Turing"
-    }
+  {
+    "id": 1,
+    "nome": "a",
+    "email": "a",
+    "fone": "001"
+  },
+  {
+    "id": 2,
+    "nome": "b",
+    "email": "b",
+    "fone": "002"
+  },
+  {
+    "id": 3,
+    "nome": "c",
+    "email": "c",
+    "fone": "003"
+  }
 ]
