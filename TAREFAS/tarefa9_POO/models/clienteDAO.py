@@ -1,4 +1,4 @@
-from models.cliente import Cliente
+from Avaliação.projeto.models.cliente import Cliente
 import json
 
 class ClienteDAO:
