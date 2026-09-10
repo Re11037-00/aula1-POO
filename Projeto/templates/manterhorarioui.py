@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from Avaliação.projeto.service import Service
+from service import Service
 import time
 from datetime import datetime
 

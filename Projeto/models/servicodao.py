@@ -1,4 +1,4 @@
-from Avaliação.projeto.models.servico import Servico
+from models.servico import Servico
 import json
 
 class ServicoDAO:

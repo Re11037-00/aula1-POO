@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import time
-from Avaliação.projeto.service import Service
+from service import Service
 
 class ManterServicoUI:
     def main():
@@ -13,6 +13,8 @@ class ManterServicoUI:
         with tab4: ManterServicoUI.excluir()
     def listar():
         servicos = Service.servico_listar()
+        departamentos = Service.departamento_listar()
+        if len(departamentos) == 0: st.write("Nenhum departamento cadastrado")
         if len(servicos) == 0: st.write("Nenhum serviço cadastrado")
         else:
             list_dic = []
@@ -20,15 +22,20 @@ class ManterServicoUI:
             df = pd.DataFrame(list_dic)
             st.dataframe(df)
     def inserir():
+        departamentos = Service.departamento_listar()
+        if len(departamentos) == 0: st.write("Nenhum departamento cadastrado")
         descr = st.text_input("Informe a descrição")
         valor = st.text_input("Informe o valor")
+        departamento = st.text_input("Informe o id do departamento")
         if st.button("Inserir"):
-            Service.servico_inserir(descr, float(valor))
+            Service.servico_inserir(descr, float(valor), departamento)
             st.success("Serviço inserido com sucesso")
             time.sleep(2)
             st.rerun()
     def atualizar():
         servicos = Service.servico_listar()
+        departamentos = Service.departamento_listar()
+        if len(departamentos) == 0: st.write("Nenhum departamento cadastrado")
         if len(servicos) == 0: st.write("Nenhum serviço cadastrado")
         else:
             op = st.selectbox("Atualização de Serviços", servicos)
@@ -42,6 +49,8 @@ class ManterServicoUI:
                 st.rerun()
     def excluir():
         servicos = Service.servico_listar()
+        departamentos = Service.departamento_listar()
+        if len(departamentos) == 0: st.write("Nenhum departamento cadastrado")
         if len(servicos) == 0: st.write("Nenhum serviço cadastrado")
         else:
             op = st.selectbox("Exclusão de Serviços", servicos)

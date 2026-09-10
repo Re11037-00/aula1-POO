@@ -15,7 +15,7 @@ class Servico:
         if valor < 0: raise ValueError("Valor deve ser positivo")
         self.__valor = valor
     def set_id_departamento(self, id_departamento):
-        if id_departamento < 0: raise ValueError("Id do departamento deve ser positivo")
+        if id_departamento == "": raise ValueError("Id do departamento deve ser informado")
         self.__id_departamento = id_departamento
 
     def get_id(self): return self.__id
@@ -27,11 +27,11 @@ class Servico:
         return f"{self.__id} - {self.__descricao} - {self.__valor} - {self.__id_departamento}"
     
     def to_json(self):
-        return { "id":self.__id, "descricao":self.__descricao, "valor":self.__valor, "departamento": self.__id_departamento }
+        return { "id":self.__id, "descricao":self.__descricao, "valor":self.__valor, "departamento": self.__id_departamento}
     
     @staticmethod
     def from_json(dic):
-        return Servico(dic["id"], dic["descricao"], dic["valor"])
+        return Servico(dic["id"], dic["descricao"], dic["valor"], dic["departamento"])
 
 
         
