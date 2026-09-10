@@ -32,8 +32,8 @@ class Service:
 
     #SERVIÇO
     @staticmethod
-    def servico_inserir(descricao, valor):
-        obj = Servico(0, descricao, valor)
+    def servico_inserir(descricao, valor, id_departamento):
+        obj = Servico(0, descricao, valor, id_departamento)
         ServicoDAO().inserir(obj)
     @staticmethod
     def servico_listar():
@@ -42,8 +42,8 @@ class Service:
     def servico_listar_id(id):
         return ServicoDAO().listar_id(id)
     @staticmethod
-    def servico_atualizar(id, descricao, valor):
-        obj = Servico(id, descricao, valor)
+    def servico_atualizar(id, descricao, valor, id_departamento):
+        obj = Servico(id, descricao, valor, id_departamento)
         ServicoDAO().atualizar(obj)
     @staticmethod
     def servico_excluir(id):
@@ -75,22 +75,22 @@ class Service:
     def horario_excluir(id):
         HorarioDAO().excluir(id) 
 
-
+    #DEPARTAMENTO   
     @staticmethod
     def departamento_inserir(nome, diretor, fone):
-            obj = Departamento(0, nome, diretor, fone)
-           DepartamentoDAO().inserir(obj)
+        obj = Departamento(0, nome, diretor, fone)
+        DepartamentoDAO().inserir(obj)
     @staticmethod
-    def cliente_listar():
-            return DepartamentoDAO().listar()
+    def departamento_listar():
+        return DepartamentoDAO().listar()
     @staticmethod
-    def cliente_listar_id(id):
-            return DepartamentoDAO().listar_id(id)
+    def departamento_listar_id(id):
+        return DepartamentoDAO().listar_id(id)
     @staticmethod
-    def cliente_atualizar(id, nome, diretor, fone):
-            obj = Departamento(id, nome, diretor, fone)
-           DepartamentoDAO().atualizar(obj)
+    def departamento_atualizar(id, nome, diretor, fone):
+        obj = Departamento(id, nome, diretor, fone)
+        DepartamentoDAO().atualizar(obj)
     @staticmethod
-    def cliente_excluir(id):
-           DepartamentoDAO().excluir(id)
+    def departamento_excluir(id):
+        DepartamentoDAO().excluir(id)
     
